@@ -5,19 +5,7 @@
 
 2. You can download automated build from public Docker Hub Registry:
 
-``` docker pull zokeber/postgresql:latest ```
-
-
-**Another way: build from Github**
-
-To create the image zokeber/postgresql, clone this repository and execute the following command on the docker-postgresql folder:
-
-`docker build -t zokeber/postgresql:latest .`
-
-Another alternatively, you can build an image directly from Github:
-
-`docker build -t="zokeber/postgresql:latest" github.com/zokeber/docker-postgresql`
-
+``` docker pull  ndongelo/centos-postgresql ```
 
 ### Create and running a container
 
@@ -25,7 +13,7 @@ Another alternatively, you can build an image directly from Github:
 
 (Not recommended for production use)
 
-``` docker create -it -p 5432:5432 --name postgresql94 zokeber/postgresql ```
+``` docker create -it -p 5432:5432 --name postgresql94  ndongelo/centos-postgresql ```
 
 **Start container:**
 
@@ -34,7 +22,7 @@ Another alternatively, you can build an image directly from Github:
 
 **Another way to start a postgresql container:**
 
-``` docker run -d -p 5432:5432 --name postgresql94 zokeber/postgresql94 ```
+``` docker run -d -p 5432:5432 --name postgresql94  ndongelo/centos-postgresql ```
 
 ### Connection methods:
 
@@ -52,14 +40,14 @@ Another alternatively, you can build an image directly from Github:
 You can create a postgresql database and superuser at launch. Use `DB_NAME`, `DB_USER` and `DB_PASS` variables.
 
 ```
-docker create -it -p 5432:5432 --name postgresql --env 'DB_USER=YOUR_USERNAME' --env 'DB_PASS=YOUR_PASSWORD' --env 'DB_NAME=YOUR_DATABASE' zokeber/postgresql
+docker create -it -p 5432:5432 --name postgresql --env 'DB_USER=YOUR_USERNAME' --env 'DB_PASS=YOUR_PASSWORD' --env 'DB_NAME=YOUR_DATABASE'  ndongelo/centos-postgresql
 
 ```
  
 If you don't set DB_PASS variable, an automatic password is generated for the PostgreSQL database user. Check to stdout/stderr log of container created:
 
 ```
-docker run -d -p 5432:5432 --name postgresql94 --env 'DB_USER=YOUR_USERNAME' --env 'DB_NAME=YOUR_DATABASE' zokeber/postgresql
+docker run -d -p 5432:5432 --name postgresql94 --env 'DB_USER=YOUR_USERNAME' --env 'DB_NAME=YOUR_DATABASE'  ndongelo/centos-postgresql
 docker logs postgresql94
 ```
 

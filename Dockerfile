@@ -1,7 +1,7 @@
 
 FROM ndongelo/centos
 
-MAINTAINER aurelio 
+MAINTAINER aurelio <aureliondongelo@gmail.com> 
 
 # Postgresql version
 ENV PG_VERSION 9.4
@@ -52,3 +52,4 @@ CMD ["/bin/bash", "/usr/local/bin/postgresql.sh"]
 
 # Expose ports.
 EXPOSE 5432
+
